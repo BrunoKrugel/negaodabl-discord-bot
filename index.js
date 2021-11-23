@@ -85,13 +85,6 @@ const options = new Map([
         }
     ],
     [
-        'braba-ratinho', {
-            command: 'braba-ratinho',
-            file: `${prefixAudio}/aperta_a_braba_ratinho.mp3`,
-            description: 'Áudio de apertar a braba versão ratinho',
-        }
-    ],
-    [
         'mery-speed', {
             command: 'braba-speed',
             file: `${prefixAudio}/mery_speed.mp3`,
@@ -103,13 +96,6 @@ const options = new Map([
             command: 'bagulhodoido',
             file: `${prefixAudio}/bagulho_doido.mp3`,
             description: 'Áudio que o bagulho tá doido',
-        }
-    ],
-    [
-        'estourado', {
-            command: 'estourado',
-            file: `${prefixAudio}/estourado.mp3`,
-            description: 'Áudio que o bagulho tá estourado',
         }
     ],
     [
