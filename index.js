@@ -3,7 +3,11 @@ const {
     Intents,
     MessageEmbed
 } = require('discord.js');
-const Client = new DiscordClient({ ws: { intents: Intents.GUILD_MESSAGES } });
+const Client = new DiscordClient({
+    ws: {
+        intents: Intents.GUILD_MESSAGES
+    }
+});
 const {
     prefix,
     token,
@@ -27,15 +31,15 @@ const options = new Map([
     [
         'mery', {
             command: 'mery',
-            file: `${prefixAudio}/aperta_a_braba.mp3`,
+            file: `${prefixAudio}/pf.mp3`,
             description: 'Áudio de mery mery pfff',
         }
     ],
     [
-        'yrem', {
-            command: 'yrem',
-            file: `${prefixAudio}/yrem.mp3`,
-            description: 'Áudio de mery mery pfff reverso',
+        'coca', {
+            command: 'coca',
+            file: `${prefixAudio}/coca.mp3`,
+            description: 'Áudio de AGUA COCA LATÃO',
         }
     ],
     [
@@ -86,13 +90,14 @@ const options = new Map([
             file: `${prefixAudio}/aperta_a_braba_ratinho.mp3`,
             description: 'Áudio de apertar a braba versão ratinho',
         }
-    ], [
+    ],
+    [
         'mery-speed', {
             command: 'braba-speed',
             file: `${prefixAudio}/mery_speed.mp3`,
             description: 'Áudio de mery versão 2xSpeed',
         }
-    ],  
+    ],
     [
         'bagulhodoido', {
             command: 'bagulhodoido',
@@ -149,7 +154,10 @@ async function execute(message) {
     const option = args[1];
     if (!option || option === 'help') {
         const embed = getDoc(options);
-        return message.channel.send({ split: true, embed });
+        return message.channel.send({
+            split: true,
+            embed
+        });
     } else {
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel) {
@@ -175,7 +183,9 @@ async function execute(message) {
 
         try {
             const connection = await voiceChannel.join();
-            const dispatcher = connection.play(audio, { volume: 0.9 });
+            const dispatcher = connection.play(audio, {
+                volume: 0.9
+            });
             message.channel.send('APERTANDO A BRABA :compression: :angry:');
 
             dispatcher.on('finish', () => {
